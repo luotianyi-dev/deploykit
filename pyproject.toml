@@ -1,0 +1,44 @@
+[project]
+name = "deploykit"
+dynamic = ["version"]
+description = "Tianyi Network 静态网站部署工具"
+authors = [
+    {name = "Tianyi Network"},
+]
+dependencies = [
+    "requests>=2.31.0",
+    "zstandard>=0.22.0",
+    "boto3>=1.34.74",
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.29.0",
+    "pydantic-settings>=2.2.1",
+    "install>=1.3.5",
+    "python-multipart>=0.0.9",
+    "pytz>=2024.1",
+]
+requires-python = ">=3.9"
+readme = "README.md"
+license = {text = "MPL-2.0"}
+
+[project.scripts]
+deployctl = "deploykit_client:main"
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm]
+distribution = true
+
+[tool.pdm.version]
+source = "file"
+path = "src/deploykit_server/__init__.py"
+
+[tool.pdm.build]
+package-dir = "src"
+
+[tool.pdm.scripts]
+dev = {cmd = "uvicorn deploykit_server.app:app --reload --reload-dir src/", env = {API_KEY = "dev-api-key", APP_PATH = "tests/server/"}}
+cli = {cmd = "deployctl", env = {API_KEY = "dev-api-key", API_URL = "http://localhost:8000", TIMEZONE = "America/Los_Angeles", PROJECT = "example-project"}}
+start = {composite = ["dev"]}
+server = "uvicorn deploykit_server.app:app"
