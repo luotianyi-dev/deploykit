@@ -9,9 +9,9 @@ DeployKit 包括一下特性：
  - 基于软链接的无缝版本切换
  - 支持将资源文件上传到 S3 兼容的对象存储
 
-[![DeployKit](https://github.com/luotianyi-dev/deploykit/actions/workflows/docker.yml/badge.svg)](https://github.com/luotianyi-dev/deploykit/actions/workflows/docker.yml)
-[![DeployKit Docker Container](https://img.shields.io/badge/ghcr.io-luotianyi--dev%2Fdeploykit-blue?style=flat-square)](https://github.com/orgs/luotianyi-dev/packages/container/package/deploykit)
-[![License: MPL 2.0](https://img.shields.io/badge/LICENSE-MPL--2.0-66ccff?style=flat-square&labelColor=)](https://github.com/orgs/luotianyi-dev/packages/container/package/deploykit)
+[![GitHub Actions: Build & Push Docker Image](https://img.shields.io/github/actions/workflow/status/luotianyi-dev/deploykit/docker.yml?style=flat-square&logo=github&logoColor=white&label=Build%20%26%20Push%20Docker%20Image)](https://github.com/luotianyi-dev/deploykit/actions/workflows/docker.yml)
+[![ghcr.io: luotianyi-dev/deploykit](https://img.shields.io/badge/ghcr.io-luotianyi--dev%2Fdeploykit-blue?style=flat-square)](https://github.com/orgs/luotianyi-dev/packages/container/package/deploykit)
+[![license: MPL-2.0](https://img.shields.io/github/license/luotianyi-dev/deploykit?style=flat-square&label=license&color=blue)](https://github.com/luotianyi-dev/deploykit/blob/main/LICENSE)
 
 ## 安装
 **DeployKit 依赖以下软件：**
